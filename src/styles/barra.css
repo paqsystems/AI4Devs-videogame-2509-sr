@@ -1,0 +1,116 @@
+.barra {
+  width: calc(var(--ancho-barra-base) * var(--longitud));
+  height: var(--altura-barra);
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--color-borde);
+  border-radius: 4px;
+  cursor: grab;
+  transition: var(--transicion-suave);
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.barra:active {
+  cursor: grabbing;
+}
+
+.barra.dragging {
+  opacity: 0.5;
+  transform: scale(1.05);
+  z-index: 1000;
+}
+
+.barra.colocada {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.segmento {
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.segmento:last-child {
+  border-right: none;
+}
+
+.segmento.rojo {
+  background-color: var(--color-rojo);
+}
+
+.segmento.azul {
+  background-color: var(--color-azul);
+}
+
+/* Animación suave para retorno */
+.barra.retornando {
+  transition: var(--transicion-suave);
+}
+
+/* Modo avanzado - barras seleccionables */
+.barra.seleccionable {
+  cursor: pointer;
+}
+
+.barra.seleccionable:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Feedback para selección correcta */
+.barra.correcta {
+  animation: correcta 0.3s ease;
+}
+
+@keyframes correcta {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+  }
+}
+
+/* Feedback implícito para selección incorrecta */
+.barra.incorrecta {
+  animation: incorrecta 0.2s ease;
+}
+
+@keyframes incorrecta {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-3px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateX(3px);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive: ajustar tamaño de barras en móviles */
+@media (max-width: 768px) {
+  .barra {
+    width: calc(40px * var(--longitud));
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra {
+    width: calc(30px * var(--longitud));
+    height: 30px;
+  }
+}
+
