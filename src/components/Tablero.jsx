@@ -148,7 +148,7 @@ const Tablero = () => {
         )}
       </div>
 
-      <div className="area-barras">
+      <div className={`area-barras ${modoAvanzado ? 'centrada' : ''}`}>
         <h2 className="titulo-area">Barras</h2>
         {barrasDesordenadas.map(barra => (
           <Barra
@@ -166,14 +166,16 @@ const Tablero = () => {
         ))}
       </div>
 
-      <div className="area-guia">
-        <h2 className="titulo-area">Guía</h2>
-        <Guia
-          barrasColocadas={barrasColocadas}
-          onBarraColocada={manejarBarraColocada}
-          barras={barras}
-        />
-      </div>
+      {!modoAvanzado && (
+        <div className="area-guia">
+          <h2 className="titulo-area">Guía</h2>
+          <Guia
+            barrasColocadas={barrasColocadas}
+            onBarraColocada={manejarBarraColocada}
+            barras={barras}
+          />
+        </div>
+      )}
     </div>
   )
 }

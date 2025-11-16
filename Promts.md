@@ -27,3 +27,11 @@ se solucionaron los errores, ahora te pido que ambos cuadros tengan un fondo cla
 
 ahora te pido que agreguemos un adicional al juego, que consiste en  que muestre un número (1–10) y el usuario deba seleccionar la barra correspondiente. 
 No cambies los principios Montessori: sin premios, sin errores explícitos, solo control de error implícito.
+
+## PROMPT 7 - subir al git en una nueva rama
+
+genera una nueva rama en el git llamada "gamer-montesori-PAQ" y haz un commit + push allí
+
+## PROMPT 8 - nueva mejora de diseño
+
+para finalizar, te pido si en el modo avanzado, quitas el cuadro "GUIAS" y centralizas el cuadro "BARRAS". ten presente que al quitar el modo avanzado, debes 
