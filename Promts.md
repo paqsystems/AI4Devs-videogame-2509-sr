@@ -35,3 +35,8 @@ genera una nueva rama en el git llamada "gamer-montesori-PAQ" y haz un commit + 
 ## PROMPT 8 - nueva mejora de diseño
 
 para finalizar, te pido si en el modo avanzado, quitas el cuadro "GUIAS" y centralizas el cuadro "BARRAS". ten presente que al quitar el modo avanzado, debes 
+
+## PROMPT 9 - nueva actualización al git
+
+vuelve a hacer un commit + push a la rama actual
+
